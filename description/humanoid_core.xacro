@@ -56,6 +56,11 @@
             </geometry>
         </collision>
     </link>
+
+    <gazebo reference="base_link">
+        <material>Gazebo/Blue</material>
+    </gazebo>
+
     <link
         name="Right_leg">
         <inertial>
@@ -154,6 +159,11 @@
             </geometry>
         </collision>
     </link>
+
+    <gazebo reference="rl1">
+        <material>Gazebo/Black</material>
+    </gazebo>
+
     <joint
         name="rlj1"
         type="revolute">
@@ -270,6 +280,11 @@
             </geometry>
         </collision>
     </link>
+
+    <gazebo reference="rl3">
+        <material>Gazebo/Black</material>
+    </gazebo>
+
     <joint
         name="rlj3"
         type="revolute">
@@ -386,6 +401,11 @@
             </geometry>
         </collision>
     </link>
+
+    <gazebo reference="rl5">
+        <material>Gazebo/Black</material>
+    </gazebo>
+
     <joint
         name="rlj5"
         type="revolute">
@@ -502,6 +522,11 @@
             </geometry>
         </collision>
     </link>
+
+    <gazebo reference="ll1">
+        <material>Gazebo/Black</material>
+    </gazebo>
+
     <joint
         name="llj1"
         type="revolute">
@@ -618,6 +643,11 @@
             </geometry>
         </collision>
     </link>
+
+    <gazebo reference="ll3">
+        <material>Gazebo/Black</material>
+    </gazebo>
+
     <joint
         name="llj3"
         type="revolute">
@@ -734,6 +764,11 @@
             </geometry>
         </collision>
     </link>
+
+    <gazebo reference="ll5">
+        <material>Gazebo/Black</material>
+    </gazebo>
+
     <joint
         name="llj5"
         type="revolute">
@@ -850,6 +885,11 @@
             </geometry>
         </collision>
     </link>
+
+    <gazebo reference="rh1">
+        <material>Gazebo/Black</material>
+    </gazebo>
+
     <joint
         name="rhj1"
         type="revolute">
@@ -966,6 +1006,11 @@
             </geometry>
         </collision>
     </link>
+
+    <gazebo reference="rh3">
+        <material>Gazebo/Black</material>
+    </gazebo>
+
     <joint
         name="rhj3"
         type="revolute">
@@ -1082,6 +1127,11 @@
             </geometry>
         </collision>
     </link>
+
+    <gazebo reference="lh1">
+        <material>Gazebo/Black</material>
+    </gazebo>
+
     <joint
         name="lhj1"
         type="revolute">
@@ -1198,6 +1248,11 @@
             </geometry>
         </collision>
     </link>
+
+    <gazebo reference="lh3">
+        <material>Gazebo/Black</material>
+    </gazebo>
+
     <joint
         name="lhj3"
         type="revolute">
