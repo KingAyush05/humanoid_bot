@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="humanoid_bot">
+
+    <xacro:include filename="humanoid_core.xacro" />
+    
+</robot>

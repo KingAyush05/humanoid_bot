@@ -1,0 +1,1219 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://share/www.ros.org/wiki/xacro">
+    
+    <material name="white">
+        <color rgba="1 1 1 1" />
+    </material>
+
+    <material name="orange">
+        <color rgba="1 0.3 0.1 1"/>
+    </material>
+
+    <material name="blue">
+        <color rgba="0.2 0.2 1 1"/>
+    </material>
+
+    <material name="black">
+        <color rgba="0 0 0 1"/>
+    </material>
+
+    <link
+        name="base_link">
+        <inertial>
+            <origin
+                xyz="1.35417581286629E-05 -0.0053284450615302 0.0661303927294094"
+                rpy="0 0 0" />
+            <mass
+                value="0.252429936173088" />
+            <inertia
+                ixx="0.000381059670185425"
+                ixy="1.32881127370107E-08"
+                ixz="-1.02510122861259E-08"
+                iyy="0.000494482070455948"
+                iyz="1.52632058757531E-05"
+                izz="0.000368240714417328" />
+        </inertial>
+        <visual>
+            <origin
+                xyz="0 0 0"
+                rpy="0 0 0" />
+            <geometry>
+                <mesh filename="file:///home/kingayush/ERC/project_ws/src/humanoid_bot/meshes/base_link.dae" />
+            </geometry>
+            <material
+                name="">
+                <color
+                    rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+            </material>
+        </visual>
+        <collision>
+            <origin
+                xyz="0 0 0"
+                rpy="0 0 0" />
+            <geometry>
+                <mesh
+                    filename="file:///home/kingayush/ERC/project_ws/src/humanoid_bot/meshes/base_link.dae" />
+            </geometry>
+        </collision>
+    </link>
+    <link
+        name="Right_leg">
+        <inertial>
+            <origin
+                xyz="-7.2169126750371E-06 -0.000265130356152415 -0.00913282474801548"
+                rpy="0 0 0" />
+            <mass
+                value="0.00367016949694875" />
+            <inertia
+                ixx="2.52493319472192E-06"
+                ixy="1.61306132476352E-11"
+                ixz="-2.15561103392276E-10"
+                iyy="5.74054276493968E-07"
+                iyz="4.87330100073944E-08"
+                izz="2.25132396579833E-06" />
+        </inertial>
+        <visual>
+            <origin
+                xyz="0 0 0"
+                rpy="0 0 0" />
+            <geometry>
+                <mesh
+                    filename="file:///home/kingayush/ERC/project_ws/src/humanoid_bot/meshes/Right_leg.dae" />
+            </geometry>
+            <material
+                name="">
+                <color
+                    rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+            </material>
+        </visual>
+        <collision>
+            <origin
+                xyz="0 0 0"
+                rpy="0 0 0" />
+            <geometry>
+                <mesh
+                    filename="file:///home/kingayush/ERC/project_ws/src/humanoid_bot/meshes/Right_leg.dae" />
+            </geometry>
+        </collision>
+    </link>
+    <joint
+        name="rlj"
+        type="revolute">
+        <origin
+            xyz="0.04 -0.010841 0.00028312"
+            rpy="0 0 0" />
+        <parent
+            link="base_link" />
+        <child
+            link="Right_leg" />
+        <axis
+            xyz="-0.00078988 -0.029018 -0.99958" />
+        <limit
+            lower="-1.57"
+            upper="1.57"
+            effort="1"
+            velocity="50" />
+    </joint>
+    <link
+        name="rl1">
+        <inertial>
+            <origin
+                xyz="-0.000226656404843373 -0.0213936228827289 -0.00177484234375003"
+                rpy="0 0 0" />
+            <mass
+                value="0.042039452062415" />
+            <inertia
+                ixx="7.95098727975664E-06"
+                ixy="5.24788645304289E-11"
+                ixz="2.93691901386919E-09"
+                iyy="9.57809901292651E-06"
+                iyz="1.17972046971933E-07"
+                izz="1.42559698166353E-05" />
+        </inertial>
+        <visual>
+            <origin
+                xyz="0 0 0"
+                rpy="0 0 0" />
+            <geometry>
+                <mesh
+                    filename="file:///home/kingayush/ERC/project_ws/src/humanoid_bot/meshes/rl1.dae" />
+            </geometry>
+            <material
+                name="">
+                <color
+                    rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+            </material>
+        </visual>
+        <collision>
+            <origin
+                xyz="0 0 0"
+                rpy="0 0 0" />
+            <geometry>
+                <mesh
+                    filename="file:///home/kingayush/ERC/project_ws/src/humanoid_bot/meshes/rl1.dae" />
+            </geometry>
+        </collision>
+    </link>
+    <joint
+        name="rlj1"
+        type="revolute">
+        <origin
+            xyz="-1.8333E-05 0.020627 -0.023508"
+            rpy="0 0 0" />
+        <parent
+            link="Right_leg" />
+        <child
+            link="rl1" />
+        <axis
+            xyz="1.1463E-05 -0.99958 0.029018" />
+        <limit
+            lower="-1.57"
+            upper="1.57"
+            effort="1"
+            velocity="50" />
+    </joint>
+    <link
+        name="rl2">
+        <inertial>
+            <origin
+                xyz="-0.0220256650127386 -0.000886121417036451 -0.0324705726683222"
+                rpy="0 0 0" />
+            <mass
+                value="0.073025646039467" />
+            <inertia
+                ixx="1.63387991228716E-05"
+                ixy="-1.5876971728972E-10"
+                ixz="-2.04040042921179E-09"
+                iyy="2.50089336298376E-05"
+                iyz="-3.2682637144261E-07"
+                izz="1.37603795334384E-05" />
+        </inertial>
+        <visual>
+            <origin
+                xyz="0 0 0"
+                rpy="0 0 0" />
+            <geometry>
+                <mesh
+                    filename="file:///home/kingayush/ERC/project_ws/src/humanoid_bot/meshes/rl2.dae" />
+            </geometry>
+            <material
+                name="">
+                <color
+                    rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+            </material>
+        </visual>
+        <collision>
+            <origin
+                xyz="0 0 0"
+                rpy="0 0 0" />
+            <geometry>
+                <mesh
+                    filename="file:///home/kingayush/ERC/project_ws/src/humanoid_bot/meshes/rl2.dae" />
+            </geometry>
+        </collision>
+    </link>
+    <joint
+        name="rlj2"
+        type="revolute">
+        <origin
+            xyz="0.021726 -0.011515 -0.029646"
+            rpy="0 0 0" />
+        <parent
+            link="rl1" />
+        <child
+            link="rl2" />
+        <axis
+            xyz="-1 1.1463E-05 0.00078988" />
+        <limit
+            lower="-1.57"
+            upper="1.57"
+            effort="1"
+            velocity="50" />
+    </joint>
+    <link
+        name="rl3">
+        <inertial>
+            <origin
+                xyz="-0.0221392342017609 -0.0011968915413899 -0.0444784621460774"
+                rpy="0 0 0" />
+            <mass
+                value="0.0462151300556569" />
+            <inertia
+                ixx="7.06861383017405E-06"
+                ixy="-2.51614623606525E-09"
+                ixz="-8.32097941788731E-08"
+                iyy="1.58060370487871E-05"
+                iyz="-1.15216239756919E-07"
+                izz="1.18532138534048E-05" />
+        </inertial>
+        <visual>
+            <origin
+                xyz="0 0 0"
+                rpy="0 0 0" />
+            <geometry>
+                <mesh
+                    filename="file:///home/kingayush/ERC/project_ws/src/humanoid_bot/meshes/rl3.dae" />
+            </geometry>
+            <material
+                name="">
+                <color
+                    rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+            </material>
+        </visual>
+        <collision>
+            <origin
+                xyz="0 0 0"
+                rpy="0 0 0" />
+            <geometry>
+                <mesh
+                    filename="file:///home/kingayush/ERC/project_ws/src/humanoid_bot/meshes/rl3.dae" />
+            </geometry>
+        </collision>
+    </link>
+    <joint
+        name="rlj3"
+        type="revolute">
+        <origin
+            xyz="-5.1342E-05 -0.0018862 -0.064973"
+            rpy="0 0 0" />
+        <parent
+            link="rl2" />
+        <child
+            link="rl3" />
+        <axis
+            xyz="-1 1.1463E-05 0.00078988" />
+        <limit
+            lower="-1.57"
+            upper="1.57"
+            effort="1"
+            velocity="50" />
+    </joint>
+    <link
+        name="rl4">
+        <inertial>
+            <origin
+                xyz="-0.0235530240328952 -0.000736219835662591 -0.0286628003492676"
+                rpy="0 0 0" />
+            <mass
+                value="0.00965451320177639" />
+            <inertia
+                ixx="4.03196289326731E-06"
+                ixy="3.06710353329861E-11"
+                ixz="1.06646104221651E-09"
+                iyy="4.0334681768456E-06"
+                iyz="5.22364332257901E-08"
+                izz="5.84391826830039E-06" />
+        </inertial>
+        <visual>
+            <origin
+                xyz="0 0 0"
+                rpy="0 0 0" />
+            <geometry>
+                <mesh
+                    filename="file:///home/kingayush/ERC/project_ws/src/humanoid_bot/meshes/rl4.dae" />
+            </geometry>
+            <material
+                name="">
+                <color
+                    rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+            </material>
+        </visual>
+        <collision>
+            <origin
+                xyz="0 0 0"
+                rpy="0 0 0" />
+            <geometry>
+                <mesh
+                    filename="file:///home/kingayush/ERC/project_ws/src/humanoid_bot/meshes/rl4.dae" />
+            </geometry>
+        </collision>
+    </link>
+    <joint
+        name="rlj4"
+        type="revolute">
+        <origin
+            xyz="0.0014912 -0.0012733 -0.047104"
+            rpy="0 0 0" />
+        <parent
+            link="rl3" />
+        <child
+            link="rl4" />
+        <axis
+            xyz="-1 1.1463E-05 0.00078988" />
+        <limit
+            lower="-1.57"
+            upper="1.57"
+            effort="1"
+            velocity="50" />
+    </joint>
+    <link
+        name="rl5">
+        <inertial>
+            <origin
+                xyz="-0.00322174402997959 -0.0234229415864125 -0.00481794931576368"
+                rpy="0 0 0" />
+            <mass
+                value="0.0713135189542348" />
+            <inertia
+                ixx="2.9772993790462E-05"
+                ixy="1.15365581602416E-09"
+                ixz="3.4561775787079E-08"
+                iyy="1.66875456915217E-05"
+                iyz="7.50974608881809E-07"
+                izz="4.25342196180859E-05" />
+        </inertial>
+        <visual>
+            <origin
+                xyz="0 0 0"
+                rpy="0 0 0" />
+            <geometry>
+                <mesh
+                    filename="file:///home/kingayush/ERC/project_ws/src/humanoid_bot/meshes/rl5.dae" />
+            </geometry>
+            <material
+                name="">
+                <color
+                    rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+            </material>
+        </visual>
+        <collision>
+            <origin
+                xyz="0 0 0"
+                rpy="0 0 0" />
+            <geometry>
+                <mesh
+                    filename="file:///home/kingayush/ERC/project_ws/src/humanoid_bot/meshes/rl5.dae" />
+            </geometry>
+        </collision>
+    </link>
+    <joint
+        name="rlj5"
+        type="revolute">
+        <origin
+            xyz="-0.02348 0.021948 -0.058024"
+            rpy="0 0 0" />
+        <parent
+            link="rl4" />
+        <child
+            link="rl5" />
+        <axis
+            xyz="-1.1463E-05 0.99958 -0.029018" />
+        <limit
+            lower="-1.57"
+            upper="1.57"
+            effort="1"
+            velocity="50" />
+    </joint>
+    <link
+        name="Left_leg">
+        <inertial>
+            <origin
+                xyz="-7.2169126750371E-06 -0.000265130356152249 -0.00913282474801554"
+                rpy="0 0 0" />
+            <mass
+                value="0.00367016949694876" />
+            <inertia
+                ixx="2.52493319493629E-06"
+                ixy="-1.53102035623497E-11"
+                ixz="-2.14648361317405E-10"
+                iyy="5.74054277721122E-07"
+                iyz="4.87330348168381E-08"
+                izz="2.25132396435685E-06" />
+        </inertial>
+        <visual>
+            <origin
+                xyz="0 0 0"
+                rpy="0 0 0" />
+            <geometry>
+                <mesh
+                    filename="file:///home/kingayush/ERC/project_ws/src/humanoid_bot/meshes/Left_leg.dae" />
+            </geometry>
+            <material
+                name="">
+                <color
+                    rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+            </material>
+        </visual>
+        <collision>
+            <origin
+                xyz="0 0 0"
+                rpy="0 0 0" />
+            <geometry>
+                <mesh
+                    filename="file:///home/kingayush/ERC/project_ws/src/humanoid_bot/meshes/Left_leg.dae" />
+            </geometry>
+        </collision>
+    </link>
+    <joint
+        name="llj"
+        type="revolute">
+        <origin
+            xyz="-0.04 -0.01084 0.00034631"
+            rpy="0 0 0" />
+        <parent
+            link="base_link" />
+        <child
+            link="Left_leg" />
+        <axis
+            xyz="-0.00078988 -0.029018 -0.99958" />
+        <limit
+            lower="-1.57"
+            upper="1.57"
+            effort="1"
+            velocity="50" />
+    </joint>
+    <link
+        name="ll1">
+        <inertial>
+            <origin
+                xyz="0.000223018111645212 -0.0213936316582284 -0.00177519742940602"
+                rpy="0 0 0" />
+            <mass
+                value="0.0420394520624151" />
+            <inertia
+                ixx="7.95099374195368E-06"
+                ixy="1.97341259132461E-10"
+                ixz="7.02514529904011E-09"
+                iyy="9.57809900727248E-06"
+                iyz="1.17971852798533E-07"
+                izz="1.42559633600924E-05" />
+        </inertial>
+        <visual>
+            <origin
+                xyz="0 0 0"
+                rpy="0 0 0" />
+            <geometry>
+                <mesh
+                    filename="file:///home/kingayush/ERC/project_ws/src/humanoid_bot/meshes/ll1.dae" />
+            </geometry>
+            <material
+                name="">
+                <color
+                    rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+            </material>
+        </visual>
+        <collision>
+            <origin
+                xyz="0 0 0"
+                rpy="0 0 0" />
+            <geometry>
+                <mesh
+                    filename="file:///home/kingayush/ERC/project_ws/src/humanoid_bot/meshes/ll1.dae" />
+            </geometry>
+        </collision>
+    </link>
+    <joint
+        name="llj1"
+        type="revolute">
+        <origin
+            xyz="-1.7989E-05 0.020627 -0.023508"
+            rpy="0 0 0" />
+        <parent
+            link="Left_leg" />
+        <child
+            link="ll1" />
+        <axis
+            xyz="0 0.99958 -0.029018" />
+        <limit
+            lower="-1.57"
+            upper="1.57"
+            effort="1"
+            velocity="50" />
+    </joint>
+    <link
+        name="ll2">
+        <inertial>
+            <origin
+                xyz="-0.0220256640997322 -0.000885767116807809 -0.0324705829545521"
+                rpy="0 0 0" />
+            <mass
+                value="0.0730256460394671" />
+            <inertia
+                ixx="1.63387991219187E-05"
+                ixy="-1.89883155979073E-11"
+                ixz="-2.04445835071359E-09"
+                iyy="2.50089336243819E-05"
+                iyz="-3.26826481741855E-07"
+                izz="1.37603795398471E-05" />
+        </inertial>
+        <visual>
+            <origin
+                xyz="0 0 0"
+                rpy="0 0 0" />
+            <geometry>
+                <mesh
+                    filename="file:///home/kingayush/ERC/project_ws/src/humanoid_bot/meshes/ll2.dae" />
+            </geometry>
+            <material
+                name="">
+                <color
+                    rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+            </material>
+        </visual>
+        <collision>
+            <origin
+                xyz="0 0 0"
+                rpy="0 0 0" />
+            <geometry>
+                <mesh
+                    filename="file:///home/kingayush/ERC/project_ws/src/humanoid_bot/meshes/ll2.dae" />
+            </geometry>
+        </collision>
+    </link>
+    <joint
+        name="llj2"
+        type="revolute">
+        <origin
+            xyz="0.022226 -0.011515 -0.029646"
+            rpy="0 0 0" />
+        <parent
+            link="ll1" />
+        <child
+            link="ll2" />
+        <axis
+            xyz="-1 2.7567E-05 0.00078942" />
+        <limit
+            lower="-1.57"
+            upper="1.57"
+            effort="1"
+            velocity="50" />
+    </joint>
+    <link
+        name="ll3">
+        <inertial>
+            <origin
+                xyz="-0.0219310712392317 -0.00119654130349063 -0.0444786368075501"
+                rpy="0 0 0" />
+            <mass
+                value="0.0462151300556569" />
+            <inertia
+                ixx="7.06888878547652E-06"
+                ixy="2.67519953555351E-09"
+                ixz="9.07611902444908E-08"
+                iyy="1.58060368461665E-05"
+                iyz="-1.15223734192333E-07"
+                izz="1.1852939100723E-05" />
+        </inertial>
+        <visual>
+            <origin
+                xyz="0 0 0"
+                rpy="0 0 0" />
+            <geometry>
+                <mesh
+                    filename="file:///home/kingayush/ERC/project_ws/src/humanoid_bot/meshes/ll3.dae" />
+            </geometry>
+            <material
+                name="">
+                <color
+                    rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+            </material>
+        </visual>
+        <collision>
+            <origin
+                xyz="0 0 0"
+                rpy="0 0 0" />
+            <geometry>
+                <mesh
+                    filename="file:///home/kingayush/ERC/project_ws/src/humanoid_bot/meshes/ll3.dae" />
+            </geometry>
+        </collision>
+    </link>
+    <joint
+        name="llj3"
+        type="revolute">
+        <origin
+            xyz="-5.1342E-05 -0.0018862 -0.064973"
+            rpy="0 0 0" />
+        <parent
+            link="ll2" />
+        <child
+            link="ll3" />
+        <axis
+            xyz="-1 2.7567E-05 0.00078942" />
+        <limit
+            lower="-1.57"
+            upper="1.57"
+            effort="1"
+            velocity="50" />
+    </joint>
+    <link
+        name="ll4">
+        <inertial>
+            <origin
+                xyz="-0.0235506939130412 -0.000735840953741712 -0.0286628131896948"
+                rpy="0 0 0" />
+            <mass
+                value="0.00965451320177639" />
+            <inertia
+                ixx="4.03196404815302E-06"
+                ixy="5.18847531035041E-11"
+                ixz="1.79720025848887E-09"
+                iyy="4.03346817601762E-06"
+                iyz="5.22364022138134E-08"
+                izz="5.84391711424267E-06" />
+        </inertial>
+        <visual>
+            <origin
+                xyz="0 0 0"
+                rpy="0 0 0" />
+            <geometry>
+                <mesh
+                    filename="file:///home/kingayush/ERC/project_ws/src/humanoid_bot/meshes/ll4.dae" />
+            </geometry>
+            <material
+                name="">
+                <color
+                    rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+            </material>
+        </visual>
+        <collision>
+            <origin
+                xyz="0 0 0"
+                rpy="0 0 0" />
+            <geometry>
+                <mesh
+                    filename="file:///home/kingayush/ERC/project_ws/src/humanoid_bot/meshes/ll4.dae" />
+            </geometry>
+        </collision>
+    </link>
+    <joint
+        name="llj4"
+        type="revolute">
+        <origin
+            xyz="0.0014928 -0.0012733 -0.047104"
+            rpy="0 0 0" />
+        <parent
+            link="ll3" />
+        <child
+            link="ll4" />
+        <axis
+            xyz="-1 2.7567E-05 0.00078942" />
+        <limit
+            lower="-1.57"
+            upper="1.57"
+            effort="1"
+            velocity="50" />
+    </joint>
+    <link
+        name="ll5">
+        <inertial>
+            <origin
+                xyz="0.00321321681597026 -0.0234230671661239 -0.00482303068508583"
+                rpy="0 0 0" />
+            <mass
+                value="0.0713135189542347" />
+            <inertia
+                ixx="2.97729164352739E-05"
+                ixy="-4.78368379854985E-10"
+                ixz="-1.43785163273644E-08"
+                iyy="1.66875457552203E-05"
+                iyz="7.50976852692365E-07"
+                izz="4.25342969095753E-05" />
+        </inertial>
+        <visual>
+            <origin
+                xyz="0 0 0"
+                rpy="0 0 0" />
+            <geometry>
+                <mesh
+                    filename="file:///home/kingayush/ERC/project_ws/src/humanoid_bot/meshes/ll5.dae" />
+            </geometry>
+            <material
+                name="">
+                <color
+                    rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+            </material>
+        </visual>
+        <collision>
+            <origin
+                xyz="0 0 0"
+                rpy="0 0 0" />
+            <geometry>
+                <mesh
+                    filename="file:///home/kingayush/ERC/project_ws/src/humanoid_bot/meshes/ll5.dae" />
+            </geometry>
+        </collision>
+    </link>
+    <joint
+        name="llj5"
+        type="revolute">
+        <origin
+            xyz="-0.023669 0.021948 -0.058024"
+            rpy="0 0 0" />
+        <parent
+            link="ll4" />
+        <child
+            link="ll5" />
+        <axis
+            xyz="0 -0.99958 0.029018" />
+        <limit
+            lower="-1.57"
+            upper="1.57"
+            effort="1"
+            velocity="50" />
+    </joint>
+    <link
+        name="Right_hand">
+        <inertial>
+            <origin
+                xyz="0.0161865806777658 -0.000302672847394256 0.00797099783190179"
+                rpy="0 0 0" />
+            <mass
+                value="0.0386774780582648" />
+            <inertia
+                ixx="1.1551151662056E-05"
+                ixy="1.51772954974114E-07"
+                ixz="-6.77573644538345E-07"
+                iyy="7.84316879217346E-06"
+                iyz="3.35646878519174E-07"
+                izz="6.72160342397866E-06" />
+        </inertial>
+        <visual>
+            <origin
+                xyz="0 0 0"
+                rpy="0 0 0" />
+            <geometry>
+                <mesh
+                    filename="file:///home/kingayush/ERC/project_ws/src/humanoid_bot/meshes/Right_hand.dae" />
+            </geometry>
+            <material
+                name="">
+                <color
+                    rgba="0.627450980392157 0.627450980392157 0.627450980392157 1" />
+            </material>
+        </visual>
+        <collision>
+            <origin
+                xyz="0 0 0"
+                rpy="0 0 0" />
+            <geometry>
+                <mesh
+                    filename="file:///home/kingayush/ERC/project_ws/src/humanoid_bot/meshes/Right_hand.dae" />
+            </geometry>
+        </collision>
+    </link>
+    <joint
+        name="rhj"
+        type="revolute">
+        <origin
+            xyz="0.088394 0.0016234 0.11948"
+            rpy="0 0.00078988 -1.1463E-05" />
+        <parent
+            link="base_link" />
+        <child
+            link="Right_hand" />
+        <axis
+            xyz="-1 0 0" />
+        <limit
+            lower="-1.57"
+            upper="1.57"
+            effort="1"
+            velocity="50" />
+    </joint>
+    <link
+        name="rh1">
+        <inertial>
+            <origin
+                xyz="0.000406089738424209 -0.0250729637753997 -0.0403805981999545"
+                rpy="0 0 0" />
+            <mass
+                value="0.0365288620683132" />
+            <inertia
+                ixx="1.2966722241973E-05"
+                ixy="1.29923731978616E-11"
+                ixz="-3.44579528181675E-09"
+                iyy="6.83391766384061E-06"
+                iyz="9.84860277468819E-08"
+                izz="8.60880168114883E-06" />
+        </inertial>
+        <visual>
+            <origin
+                xyz="0 0 0"
+                rpy="0 0 0" />
+            <geometry>
+                <mesh
+                    filename="file:///home/kingayush/ERC/project_ws/src/humanoid_bot/meshes/rh1.dae" />
+            </geometry>
+            <material
+                name="">
+                <color
+                    rgba="0.627450980392157 0.627450980392157 0.627450980392157 1" />
+            </material>
+        </visual>
+        <collision>
+            <origin
+                xyz="0 0 0"
+                rpy="0 0 0" />
+            <geometry>
+                <mesh
+                    filename="file:///home/kingayush/ERC/project_ws/src/humanoid_bot/meshes/rh1.dae" />
+            </geometry>
+        </collision>
+    </link>
+    <joint
+        name="rhj1"
+        type="revolute">
+        <origin
+            xyz="0.016483 0.02875 -0.009044"
+            rpy="0 -0.00078988 1.1463E-05" />
+        <parent
+            link="Right_hand" />
+        <child
+            link="rh1" />
+        <axis
+            xyz="-1.1463E-05 0.99958 -0.029018" />
+        <limit
+            lower="-1.57"
+            upper="1.57"
+            effort="1"
+            velocity="50" />
+    </joint>
+    <link
+        name="rh2">
+        <inertial>
+            <origin
+                xyz="-7.20994548822351E-06 -0.000264874400065923 -0.00912400794516433"
+                rpy="0 0 0" />
+            <mass
+                value="0.00211573451754258" />
+            <inertia
+                ixx="1.23903713581457E-06"
+                ixy="7.38044657053826E-12"
+                ixz="-1.22679121095011E-10"
+                iyy="2.85568177401466E-07"
+                iyz="2.31806266055482E-08"
+                izz="1.08338802818883E-06" />
+        </inertial>
+        <visual>
+            <origin
+                xyz="0 0 0"
+                rpy="0 0 0" />
+            <geometry>
+                <mesh
+                    filename="file:///home/kingayush/ERC/project_ws/src/humanoid_bot/meshes/rh2.dae" />
+            </geometry>
+            <material
+                name="">
+                <color
+                    rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+            </material>
+        </visual>
+        <collision>
+            <origin
+                xyz="0 0 0"
+                rpy="0 0 0" />
+            <geometry>
+                <mesh
+                    filename="file:///home/kingayush/ERC/project_ws/src/humanoid_bot/meshes/rh2.dae" />
+            </geometry>
+        </collision>
+    </link>
+    <joint
+        name="rhj2"
+        type="revolute">
+        <origin
+            xyz="0.00094618 -0.027611 -0.067735"
+            rpy="0 0 0" />
+        <parent
+            link="rh1" />
+        <child
+            link="rh2" />
+        <axis
+            xyz="0.00078988 0.029018 0.99958" />
+        <limit
+            lower="-1.57"
+            upper="1.57"
+            effort="1"
+            velocity="50" />
+    </joint>
+    <link
+        name="rh3">
+        <inertial>
+            <origin
+                xyz="0.00250794378796093 -0.0260547875116064 -0.018638499991729"
+                rpy="0 0 0" />
+            <mass
+                value="0.0385191203079589" />
+            <inertia
+                ixx="1.5215770408254E-05"
+                ixy="1.37992435307474E-08"
+                ixz="4.60685190443868E-07"
+                iyy="1.06715884908314E-05"
+                iyz="-9.92877783132776E-08"
+                izz="7.23814175894702E-06" />
+        </inertial>
+        <visual>
+            <origin
+                xyz="0 0 0"
+                rpy="0 0 0" />
+            <geometry>
+                <mesh
+                    filename="file:///home/kingayush/ERC/project_ws/src/humanoid_bot/meshes/rh3.dae" />
+            </geometry>
+            <material
+                name="">
+                <color
+                    rgba="0.627450980392157 0.627450980392157 0.627450980392157 1" />
+            </material>
+        </visual>
+        <collision>
+            <origin
+                xyz="0 0 0"
+                rpy="0 0 0" />
+            <geometry>
+                <mesh
+                    filename="file:///home/kingayush/ERC/project_ws/src/humanoid_bot/meshes/rh3.dae" />
+            </geometry>
+        </collision>
+    </link>
+    <joint
+        name="rhj3"
+        type="revolute">
+        <origin
+            xyz="0.00046641 0.024973 -0.018527"
+            rpy="0 0 0" />
+        <parent
+            link="rh2" />
+        <child
+            link="rh3" />
+        <axis
+            xyz="1.1463E-05 -0.99958 0.029018" />
+        <limit
+            lower="-1.57"
+            upper="1.57"
+            effort="1"
+            velocity="50" />
+    </joint>
+    <link
+        name="Left_hand">
+        <inertial>
+            <origin
+                xyz="-0.0161865806777658 0.000764577166430885 0.00794001505323991"
+                rpy="0 0 0" />
+            <mass
+                value="0.0386774780582654" />
+            <inertia
+                ixx="1.15511516620597E-05"
+                ixy="1.90824798687739E-07"
+                ixz="6.67627867780743E-07"
+                iyy="7.8005167230562E-06"
+                iyz="-3.98342455260364E-07"
+                izz="6.7642554930997E-06" />
+        </inertial>
+        <visual>
+            <origin
+                xyz="0 0 0"
+                rpy="0 0 0" />
+            <geometry>
+                <mesh
+                    filename="file:///home/kingayush/ERC/project_ws/src/humanoid_bot/meshes/Left_hand.dae" />
+            </geometry>
+            <material
+                name="">
+                <color
+                    rgba="0.627450980392157 0.627450980392157 0.627450980392157 1" />
+            </material>
+        </visual>
+        <collision>
+            <origin
+                xyz="0 0 0"
+                rpy="0 0 0" />
+            <geometry>
+                <mesh
+                    filename="file:///home/kingayush/ERC/project_ws/src/humanoid_bot/meshes/Left_hand.dae" />
+            </geometry>
+        </collision>
+    </link>
+    <joint
+        name="lhj"
+        type="revolute">
+        <origin
+            xyz="-0.088206 0.0016255 0.11962"
+            rpy="0 0.00078988 -1.1463E-05" />
+        <parent
+            link="base_link" />
+        <child
+            link="Left_hand" />
+        <axis
+            xyz="-1 0 0" />
+        <limit
+            lower="-1.57"
+            upper="1.57"
+            effort="1"
+            velocity="50" />
+    </joint>
+    <link
+        name="lh1">
+        <inertial>
+            <origin
+                xyz="-0.000470445904127724 -0.0250729537277202 -0.0403799058383448"
+                rpy="0 0 0" />
+            <mass
+                value="0.0365288620683132" />
+            <inertia
+                ixx="1.29667222419731E-05"
+                ixy="1.29923732019853E-11"
+                ixz="-3.4457952818145E-09"
+                iyy="6.83391766384062E-06"
+                iyz="9.84860277468744E-08"
+                izz="8.60880168114886E-06" />
+        </inertial>
+        <visual>
+            <origin
+                xyz="0 0 0"
+                rpy="0 0 0" />
+            <geometry>
+                <mesh
+                    filename="file:///home/kingayush/ERC/project_ws/src/humanoid_bot/meshes/lh1.dae" />
+            </geometry>
+            <material
+                name="">
+                <color
+                    rgba="0.627450980392157 0.627450980392157 0.627450980392157 1" />
+            </material>
+        </visual>
+        <collision>
+            <origin
+                xyz="0 0 0"
+                rpy="0 0 0" />
+            <geometry>
+                <mesh
+                    filename="file:///home/kingayush/ERC/project_ws/src/humanoid_bot/meshes/lh1.dae" />
+            </geometry>
+        </collision>
+    </link>
+    <joint
+        name="lhj1"
+        type="revolute">
+        <origin
+            xyz="-0.016483 0.02875 -0.009044"
+            rpy="0 -0.00078988 1.1463E-05" />
+        <parent
+            link="Left_hand" />
+        <child
+            link="lh1" />
+        <axis
+            xyz="-1.1463E-05 0.99958 -0.029018" />
+        <limit
+            lower="-1.57"
+            upper="1.57"
+            effort="1"
+            velocity="50" />
+    </joint>
+    <link
+        name="lh2">
+        <inertial>
+            <origin
+                xyz="-7.20994548821657E-06 -0.000264874400066034 -0.00912400794516435"
+                rpy="0 0 0" />
+            <mass
+                value="0.00211573451754256" />
+            <inertia
+                ixx="1.23903713581457E-06"
+                ixy="7.38044657143282E-12"
+                ixz="-1.22679121094669E-10"
+                iyy="2.85568177401464E-07"
+                iyz="2.31806266055475E-08"
+                izz="1.08338802818883E-06" />
+        </inertial>
+        <visual>
+            <origin
+                xyz="0 0 0"
+                rpy="0 0 0" />
+            <geometry>
+                <mesh
+                    filename="file:///home/kingayush/ERC/project_ws/src/humanoid_bot/meshes/lh2.dae" />
+            </geometry>
+            <material
+                name="">
+                <color
+                    rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+            </material>
+        </visual>
+        <collision>
+            <origin
+                xyz="0 0 0"
+                rpy="0 0 0" />
+            <geometry>
+                <mesh
+                    filename="file:///home/kingayush/ERC/project_ws/src/humanoid_bot/meshes/lh2.dae" />
+            </geometry>
+        </collision>
+    </link>
+    <joint
+        name="lhj2"
+        type="revolute">
+        <origin
+            xyz="-0.0010538 -0.027611 -0.067733"
+            rpy="0 0 0" />
+        <parent
+            link="lh1" />
+        <child
+            link="lh2" />
+        <axis
+            xyz="0.00078988 0.029018 0.99958" />
+        <limit
+            lower="-1.57"
+            upper="1.57"
+            effort="1"
+            velocity="50" />
+    </joint>
+    <link
+        name="lh3">
+        <inertial>
+            <origin
+                xyz="-0.00349948892631882 -0.0260572497849816 -0.0186336813357347"
+                rpy="0 0 0" />
+            <mass
+                value="0.0385191203079589" />
+            <inertia
+                ixx="1.52142942904022E-05"
+                ixy="-1.33158227321521E-08"
+                ixz="-4.73309547511487E-07"
+                iyy="1.0671535147843E-05"
+                iyz="-1.00184318642492E-07"
+                izz="7.23967121978727E-06" />
+        </inertial>
+        <visual>
+            <origin
+                xyz="0 0 0"
+                rpy="0 0 0" />
+            <geometry>
+                <mesh
+                    filename="file:///home/kingayush/ERC/project_ws/src/humanoid_bot/meshes/lh3.dae" />
+            </geometry>
+            <material
+                name="">
+                <color
+                    rgba="0.627450980392157 0.627450980392157 0.627450980392157 1" />
+            </material>
+        </visual>
+        <collision>
+            <origin
+                xyz="0 0 0"
+                rpy="0 0 0" />
+            <geometry>
+                <mesh
+                    filename="file:///home/kingayush/ERC/project_ws/src/humanoid_bot/meshes/lh3.dae" />
+            </geometry>
+        </collision>
+    </link>
+    <joint
+        name="lhj3"
+        type="revolute">
+        <origin
+            xyz="0.00046641 0.024973 -0.018527"
+            rpy="0 0 0" />
+        <parent
+            link="lh2" />
+        <child
+            link="lh3" />
+        <axis
+            xyz="1.1463E-05 -0.99958 0.029018" />
+        <limit
+            lower="-1.57"
+            upper="1.57"
+            effort="1"
+            velocity="50" />
+    </joint>
+</robot>
