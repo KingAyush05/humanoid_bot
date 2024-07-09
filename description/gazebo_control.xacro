@@ -1,0 +1,201 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://share/www.ros.org/wiki/xacro">
+
+    <xacro:property name="limlow" value="-1.57"/>
+    <xacro:property name="limhigh" value="1.57"/>
+
+    <ros2_control name="GazeboSystem" type="system">
+        <hardware>
+            <plugin>gazebo_ros2_control/GazeboSystem</plugin>
+        </hardware>
+        <joint name="rlj">
+            <command_interface name="position">
+                <param name="min">${limlow}</param>
+                <param name="max">${limhigh}</param>
+            </command_interface>
+            <state_interface name="position"/>
+            <state_interface name="velocity"/>
+            <state_interface name="effort"/>
+        </joint>
+        <joint name="rlj1">
+            <command_interface name="position">
+                <param name="min">${limlow}</param>
+                <param name="max">${limhigh}</param>
+            </command_interface>
+            <state_interface name="position"/>
+            <state_interface name="velocity"/>
+            <state_interface name="effort"/>
+        </joint>
+        <joint name="rlj2">
+            <command_interface name="position">
+                <param name="min">${limlow}</param>
+                <param name="max">${limhigh}</param>
+            </command_interface>
+            <state_interface name="position"/>
+            <state_interface name="velocity"/>
+            <state_interface name="effort"/>
+        </joint>
+        <joint name="rlj3">
+            <command_interface name="position">
+                <param name="min">${limlow}</param>
+                <param name="max">${limhigh}</param>
+            </command_interface>
+            <state_interface name="position"/>
+            <state_interface name="velocity"/>
+            <state_interface name="effort"/>
+        </joint>
+        <joint name="rlj4">
+            <command_interface name="position">
+                <param name="min">${limlow}</param>
+                <param name="max">${limhigh}</param>
+            </command_interface>
+            <state_interface name="position"/>
+            <state_interface name="velocity"/>
+            <state_interface name="effort"/>
+        </joint>
+        <joint name="rlj5">
+            <command_interface name="position">
+                <param name="min">${limlow}</param>
+                <param name="max">${limhigh}</param>
+            </command_interface>
+            <state_interface name="position"/>
+            <state_interface name="velocity"/>
+            <state_interface name="effort"/>
+        </joint>
+        <joint name="llj">
+            <command_interface name="position">
+                <param name="min">${limlow}</param>
+                <param name="max">${limhigh}</param>
+            </command_interface>
+            <state_interface name="position"/>
+            <state_interface name="velocity"/>
+            <state_interface name="effort"/>
+        </joint>
+        <joint name="llj1">
+            <command_interface name="position">
+                <param name="min">${limlow}</param>
+                <param name="max">${limhigh}</param>
+            </command_interface>
+            <state_interface name="position"/>
+            <state_interface name="velocity"/>
+            <state_interface name="effort"/>
+        </joint>
+        <joint name="llj2">
+            <command_interface name="position">
+                <param name="min">${limlow}</param>
+                <param name="max">${limhigh}</param>
+            </command_interface>
+            <state_interface name="position"/>
+            <state_interface name="velocity"/>
+            <state_interface name="effort"/>
+        </joint>
+        <joint name="llj3">
+            <command_interface name="position">
+                <param name="min">${limlow}</param>
+                <param name="max">${limhigh}</param>
+            </command_interface>
+            <state_interface name="position"/>
+            <state_interface name="velocity"/>
+            <state_interface name="effort"/>
+        </joint>
+        <joint name="llj4">
+            <command_interface name="position">
+                <param name="min">${limlow}</param>
+                <param name="max">${limhigh}</param>
+            </command_interface>
+            <state_interface name="position"/>
+            <state_interface name="velocity"/>
+            <state_interface name="effort"/>
+        </joint>
+        <joint name="llj5">
+            <command_interface name="position">
+                <param name="min">${limlow}</param>
+                <param name="max">${limhigh}</param>
+            </command_interface>
+            <state_interface name="position"/>
+            <state_interface name="velocity"/>
+            <state_interface name="effort"/>
+        </joint>
+        <joint name="rhj">
+            <command_interface name="position">
+                <param name="min">${limlow}</param>
+                <param name="max">${limhigh}</param>
+            </command_interface>
+            <state_interface name="position"/>
+            <state_interface name="velocity"/>
+            <state_interface name="effort"/>
+        </joint>
+        <joint name="rhj1">
+            <command_interface name="position">
+                <param name="min">${limlow}</param>
+                <param name="max">${limhigh}</param>
+            </command_interface>
+            <state_interface name="position"/>
+            <state_interface name="velocity"/>
+            <state_interface name="effort"/>
+        </joint>
+        <joint name="rhj2">
+            <command_interface name="position">
+                <param name="min">${limlow}</param>
+                <param name="max">${limhigh}</param>
+            </command_interface>
+            <state_interface name="position"/>
+            <state_interface name="velocity"/>
+            <state_interface name="effort"/>
+        </joint>
+        <joint name="rhj3">
+            <command_interface name="position">
+                <param name="min">${limlow}</param>
+                <param name="max">${limhigh}</param>
+            </command_interface>
+            <state_interface name="position"/>
+            <state_interface name="velocity"/>
+            <state_interface name="effort"/>
+        </joint>
+        <joint name="lhj">
+            <command_interface name="position">
+                <param name="min">${limlow}</param>
+                <param name="max">${limhigh}</param>
+            </command_interface>
+            <state_interface name="position"/>
+            <state_interface name="velocity"/>
+            <state_interface name="effort"/>
+        </joint>
+        <joint name="lhj1">
+            <command_interface name="position">
+                <param name="min">${limlow}</param>
+                <param name="max">${limhigh}</param>
+            </command_interface>
+            <state_interface name="position"/>
+            <state_interface name="velocity"/>
+            <state_interface name="effort"/>
+        </joint>
+        <joint name="lhj2">
+            <command_interface name="position">
+                <param name="min">${limlow}</param>
+                <param name="max">${limhigh}</param>
+            </command_interface>
+            <state_interface name="position"/>
+            <state_interface name="velocity"/>
+            <state_interface name="effort"/>
+        </joint>
+        <joint name="lhj3">
+            <command_interface name="position">
+                <param name="min">${limlow}</param>
+                <param name="max">${limhigh}</param>
+            </command_interface>
+            <state_interface name="position"/>
+            <state_interface name="velocity"/>
+            <state_interface name="effort"/>
+        </joint>
+
+    </ros2_control>
+
+    <gazebo>
+        <plugin filename="libgazebo_ros2_control.so" name="gazebo_ros2_control">
+            <!-- <parameters>$(find box_car_description)/config/steering_controller_velocity.yaml</parameters> -->
+            <parameters>$(find humanoid_bot)/config/controller_position.yaml</parameters>
+        </plugin>
+    </gazebo>
+
+</robot>

@@ -1,5 +1,7 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://share/www.ros.org/wiki/xacro">
+
+    <!-- <xacro:include filename="gazebo_control.xacro" /> -->
     
     <material name="white">
         <color rgba="1 1 1 1" />
